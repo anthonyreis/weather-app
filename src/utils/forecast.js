@@ -5,7 +5,8 @@ const forecast = (latitude, longitude, callback) => {
     
     axios.get(url)
     .then(function ({ data }) {
-        callback(undefined, `${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degrees, and it feels like ${data.current.feelslike} degrees. The humidity is ${data.current.humidity}%, and ${data.current.precip}% chance of rain.`)
+        callback(undefined, `${data.current.weather_descriptions[0]}. It is currently ${data.current.temperature} degrees, and it feels like ${data.current.feelslike} degrees.
+         The humidity is ${data.current.humidity}%, and ${data.current.precip}% chance of rain.`)
     })
     .catch(function (error) {
         if (!error.errno){
